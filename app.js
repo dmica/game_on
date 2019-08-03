@@ -80,6 +80,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 const db = mysql.createConnection ({
 });
 
+
 //check if application is connected to the MySQL database
 db.connect((err) => {
   if(err){
