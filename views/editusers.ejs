@@ -1,0 +1,20 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+<% res1.forEach(function(user) { %>
+    <div class="grid-container_form">
+        <form accept-charset="UTF-8" action="/editusers/<%= user.Id %>" method="post" enctype="multipart/form-data">
+            <div class="item_ae">
+                <label for="username">Username:</label>
+                <input name="username" type="text" value="<%=user.username%>"/>
+                <label for="email">Email:</label>
+                <input name="email" type="text" value="<%=user.email%>"/>
+                <label for="password">Password:</label>
+                <input name="password" type="text" value="<%=user.password%>"/>
+                <label for="admin">Admin:</label>
+                <input name="admin" type="text" value="<%=user.admin%>"/>
+                <button class="button_default">Edit User</button>
+            </div>
+        </form>
+        <% }); %>
+    </div>
+</div>

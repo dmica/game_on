@@ -1,0 +1,38 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+
+<div class="row">
+  <h1>Add new eBook</h1>
+  <div class="grid-container_form">
+    <form accept-charset="UTF-8" id="uploadForm" ref="uploadForm" action="/createebooks" method="post" enctype="multipart/form-data">
+      <div class="item_ae">
+        <label for="name">*Name:</label>
+        <input name="name" type="text" placeholder="Please enter product name", required/>
+
+        <label for="image">*Image:</label><br>
+        <input class="button" type="file" name="sampleFile", title="Correct image format Please", accept=".png, .jpg, .jpeg", required/><br><br>
+
+        <br>
+        <label for="genre">*Genre:</label>
+        <input name="genre" type="text" placeholder="Please enter product name", required/>
+
+        <label for="printLength">*PrintLength:</label>
+        <input name="printLength" type="text" placeholder="Please enter product name", required/>
+
+        <label for="language">*Language:</label>
+        <input name="language" type="text" placeholder="Please enter product name", required/>
+
+        <label for="description">*Description:</label>
+        <input name="description" type="text" placeholder="Please enter product description", required/>
+
+        <label for="price">*Price:</label>
+        <input name="price" type="text" placeholder="Please enter product price", title="Numbers Only Please", maxlength="15", pattern="\d*", required/>
+        <button class="button_default">Add New eBook</button>
+      </div>
+    </form>
+  </div>
+</div>
+</br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+
+<!--get access to footer file-->
+<% include ../partials/footer %>

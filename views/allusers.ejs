@@ -1,0 +1,20 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %><br>
+  <h1>Registered Users</h1><br>
+  <div class="row">
+    <div class="grid-container">
+      <% res1.forEach(function(users) { %>
+      <div class="item">
+        <div class="item">
+          <h1 class="itemtitle">Username: <%= users.username%></h1>
+          <h1 class="itemp">Email: <%= users.email%></h1>
+          <h1 class="itemp">Admin: <%= users.admin%></h1>
+          <a href="/editusers/<%= users.Id %>" class="button_edit">Edit</a>
+          <a href="/deleteuser/<%= users.Id %>" class="button_delete">Delete</a>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</br></br></br></br></br></br></br></br></br></br>
+<br><% include ../partials/footer %>

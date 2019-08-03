@@ -1,0 +1,19 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+  <div class="row">
+    <% res1.forEach(function(post) { %>
+      <div class="grid-container_form">
+        <h1>Edit Posts</h1>
+        <form accept-charset="UTF-8" action="/editposts/<%= post.Id %>" method="post" enctype="multipart/form-data">
+          <div class="item_ae">
+            <label for="title">*Title:</label>
+            <input name="title" type="text" value="<%=post.Title%>", required/><br>
+            <label for="text">*Text:</label><br>
+            <input name="text" type="text" rows="8" cols="80" value="<%=post.Text%>", required/><br><br>
+            <button class="button_default">Edit Blog Post</button>
+          </div>
+        </form>
+    <% }); %>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!--get access to header file-->
+  <% include ../partials/footer %>

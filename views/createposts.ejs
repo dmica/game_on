@@ -1,0 +1,19 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+  <div class="row">
+    <h1>Add New Blog Post</h1>
+    <div class="grid-container_form">
+      <form accept-charset="UTF-8" action="/createposts" method="post" enctype="multipart/form-data">
+        <div class="item_ae">
+          <label for="title">*Title:</label>
+          <input name="title" type="text" placeholder="Please enter title", required/>
+
+          <label for="text">*Text:</label><br>
+          <textarea name="text" rows="8" cols="80" placeholder="Please enter text", required/></textarea><br>
+          <button class="button_default">Add New Blog Post</button>
+        </div>
+      </form>
+    </div>
+  </div></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br></br>
+<!--get access to footer file-->
+<% include ../partials/footer %>

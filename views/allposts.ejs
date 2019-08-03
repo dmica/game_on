@@ -1,0 +1,18 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %><br>
+  <h1>
+      Welcome to Blog Page!
+  </h1>
+  <% res2.forEach(function(posts) { %>
+      <div class="item">
+          <div class="item">
+              <h1 class="itemtitle"><%= posts.Title%></h1>
+              <h1 class="itemp"><%= posts.Text%></h1>
+              <a href="/editposts/<%= posts.Id %>" class="button_edit">Edit</a>
+              <a href="/deletepost/<%= posts.Id %>" class="button_delete">Delete</a>
+          </div>
+          </br></br>
+      </div>
+  <% }); %>
+</br></br></br></br></br></br>
+<br><% include ../partials/footer %>

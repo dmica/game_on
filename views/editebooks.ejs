@@ -1,0 +1,39 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+
+  <h1>Add new eBook</h1>
+
+  <div class="row">
+    <div class="grid-container_form">
+      <% res2.forEach(function(ebook) { %>
+        <form accept-charset="UTF-8" action="/editebooks/<%= ebook.Id %>" method="post" enctype="multipart/form-data">
+          <div class="item_ae">
+            <label for="name">*Name:</label>
+            <input name="name" type="text" value="<%=ebook.Name%>", required/>
+
+            <label for="image">*Image:</label>
+            <input class="button" type="file" name="sampleFile", title="Only .png, .jpg, .jpeg formats accespted", accept=".png, .jpg, .jpeg", required/><br><br>
+
+            <label for="genre">*Genre:</label>
+            <input name="genre" type="text" value="<%= ebook.Genre%>", required/>
+
+            <label for="printLength">*PrintLength:</label>
+            <input name="printLength" type="text" value="<%= ebook.PrintLength%>", required/>
+
+            <label for="language">*Language:</label>
+            <input name="language" type="text" value="<%= ebook.Language%>", required/>
+
+            <label for="description">*Description:</label>
+            <input name="description" type="text" value="<%= ebook.Description%>", required/>
+
+            <label for="price">*Price:</label>
+            <input name="price" type="text" value="<%= ebook.Price%>", title="Numbers Only Please", maxlength="15", pattern="\d*", required/>
+
+            <button class="button_default">Edit eBook</button>
+          </div>
+        </form>
+      <% }); %>
+    </div>
+  </div>
+<!--get access to footer file-->
+<% include ../partials/footer %>

@@ -1,0 +1,45 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+
+<% res1.forEach(function(game) { %>
+  <div class="grid-container_form">
+      <form accept-charset="UTF-8" action="/editgames/<%= game.Id %>" method="post" enctype="multipart/form-data">
+          <div class="item_ae">
+
+              <label for="name">*Name:</label>
+              <input name="name" type="text" value="<%=game.Name%>", required/>
+
+              <label for="image">*Image:</label>
+              <input class="button" type="file" name="sampleFile", title="Only .png, .jpg, .jpeg formats accespted", accept=".png, .jpg, .jpeg", required/><br><br>
+
+              <label for="genre">*Genre:</label>
+              <input name="genre" type="text" value="<%=game.Genre%>", required/>
+
+              <label for="type">*Type:</label>
+              <input name="type" type="text" value="<%=game.Type%>", required/>
+
+              <label for="controllerSupport">*Controller Support:</label>
+              <input name="controllerSupport" type="text" value="<%=game.ControllerSupport%>", required/>
+
+              <label for="SteamAchivments">*Steam Achivments:</label>
+              <input name="SteamAchivments" type="text" value="<%=game.SteamAchivments%>", required/>
+
+              <label for="MetacriticScore">*Metacritic Score:</label>
+              <input name="MetacriticScore" type="text" value="<%=game.MetacriticScore%>", required/>
+
+              <label for="description">*Description:</label>
+              <input name="description" type="text" value="<%=game.Description%>", required/>
+
+              <label for="price">*Price:</label>
+              <input name="price" type="text" value="<%=game.Price%>", required/>
+
+              <button class="button_default">Edit Game</button>
+          </div>
+
+      </form>
+      <% }); %>
+
+  </div>
+
+<!--get access to footer file-->
+<% include ../partials/footer %>

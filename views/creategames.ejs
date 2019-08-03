@@ -1,0 +1,41 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+  <div class="row">
+    <h3>Add New Game</h3>
+    <div class="grid-container_form">
+      <form accept-charset="UTF-8" id="uploadForm" ref="uploadForm" action="/creategames" method="post" enctype="multipart/form-data">
+        <div class="item_ae">
+          <label for="name">*Name:</label>
+          <input name="name" type="text" placeholder="Please enter product name", required/>
+
+          <label for="image">*Image:</label>
+          <input class="button" type="file" name="sampleFile", title="Only .png, .jpg, .jpeg formats accespted", accept=".png, .jpg, .jpeg", required/>
+
+          <label for="genre">*Genre:</label>
+          <input name="genre" type="text" placeholder="Please geme genre", required/>
+
+          <label for="type">*Type:</label>
+          <input name="type" type="text" placeholder="Please enter game type", required/>
+
+          <label for="controllerSupport">*Controller Support:</label>
+          <input name="controllerSupport" type="text" placeholder="Does game has controller support?", required/>
+
+          <label for="SteamAchivments">*Steam Achivments:</label>
+          <input name="SteamAchivments" type="text" placeholder="Does game have Steam achivments?", required/>
+
+          <label for="MetacriticScore">*Metacritic Score:</label>
+          <input name="MetacriticScore" type="text" placeholder="Please enter Metacritic score", required/>
+
+          <label for="description">*Description:</label>
+          <input name="description" type="text" placeholder="Please enter game description", required/>
+
+          <label for="price">*Price:</label>
+          <input name="price" type="text" placeholder="Please enter product price", title="Numbers Only Please", required/>
+          <button class="button_default">Add New Game</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</br></br></br></br></br>
+<!--get access to footer file-->
+<% include ../partials/footer %>

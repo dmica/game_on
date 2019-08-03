@@ -1,0 +1,44 @@
+<!--get access to header file-->
+<% include ../partials/adminheader %>
+  <div class="spacers">
+    <h1>
+        Welcome to eBooks Shop!
+    </h1>
+    <% include ../partials/searchebooks %>
+  </div>
+  <div class="row">
+    <div class="grid-container_show">
+      <% res2.forEach(function(ebooks) { %>
+        <div class="item">
+          <div class="item">
+            <h1 class="itemtitle">Name: <%= ebooks.Name%></h1>
+            <img src="/<%= ebooks.Image %>" class="pimage"></img>
+            <h1 class="itemp">Genre: <%= ebooks.Genre%></h1>
+            <h1 class="itemp">Price: <%= ebooks.Price%>€</h1>
+            <a href="/editebooks/<%= ebooks.Id %>" class="button_edit">Edit</a>
+            <a href="/deleteebook/<%= ebooks.Id %>" class="button_delete">Delete</a>
+            <!-- Paypal cart -->
+            <form target="_self" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+              <!-- Identify your business so that you can collect the payments. -->
+              <input type="hidden" name="business" value="testseller@seller.ie">
+              <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+              <input type="hidden" name="cmd" value="_cart">
+              <input type="hidden" name="add" value="1">
+              <!-- Specify details about the item that buyers will purchase. -->
+              <input type="hidden" name="item_name" value="<%= ebooks.Name%>">
+              <input type="hidden" name="amount" value="<%= ebooks.Price%>">
+              <input type="hidden" name="currency_code" value="EUR">
+              <!-- Display the payment button. -->
+              <input type="image" name="submit"
+                src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif"
+                alt="Add to Cart">
+              <img alt="" width="1" height="1"
+                src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div><br><br><br><br>
+<!--get access to footer file-->
+<% include ../partials/footer %>

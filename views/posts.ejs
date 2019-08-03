@@ -1,0 +1,13 @@
+<!--get access to header file-->
+<% include ../partials/header %><br>
+  <% res2.forEach(function(posts) { %>
+      <div class="item">
+          <div class="item">
+              <h1 class="itemtitle"><%= posts.Title%></h1>
+              <h1 class="itemp"><%= posts.Text%></h1>
+          </div>
+          </br></br>
+      </div>
+  <% }); %>
+</br></br></br></br></br></br>
+<br><% include ../partials/footer %>
